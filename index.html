@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" id="chart">
+      <rect
+        v-bind:width="width"
+        v-bind:height="height"
+        v-bind:x="x"
+        v-bind:y="y"
+        fill="#f0b375"
+      ></rect>
+    </svg>
+
+    <script src="index.js"></script>
+  </body>
+</html>
