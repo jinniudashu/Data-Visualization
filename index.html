@@ -8,16 +8,41 @@
   </head>
 
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" id="chart">
-      <rect
-        v-bind:width="width"
-        v-bind:height="height"
-        v-bind:x="x"
-        v-bind:y="y"
-        fill="#f0b375"
-      ></rect>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="chart"
+      :width="chartWidth"
+      :height="chartHeight"
+    >
+      <g
+        v-for="(value, i) in  chartData"
+        :transform="`translate(0, ${i * 40})`"
+      >
+        <rect height="30" :width="barWidth(value)" fill="#f0b375"></rect>
+        <text y="20">{{ value }}</text>
+      </g>
+      <!-- <rect :width="width" :height="height" 
+        :x="x" :y="y" 
+        fill="#f0b375"></rect> -->
     </svg>
 
+    <!-- <script>
+      var app = new Vue({
+        el: "#chart",
+        data: {
+          chartData: [5, 8, 20, 3, 17, 14]
+          // width: 200,
+          // height: 200,
+          // x: 10,
+          // y: 10
+        },
+        methods: {
+          barWidth(value) {
+            return (500 / 20) * value;
+          }
+        }
+      });
+    </script> -->
     <script src="index.js"></script>
   </body>
 </html>
